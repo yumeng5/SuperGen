@@ -26,7 +26,7 @@ pip3 install -r requirements.txt
 ## Fine-Tuning
 
 When using the same prompt-based fine-tuning pipeline (with the same manual prompts and label words), zero-shot SuperGen even achieves better performance than few-shot LM-BFF using 32 annotated samples per class across seven GLUE classification tasks:
-| Method | MNLI-m/mm | QQP | QNLI | SST-2 | CoLA | RTE | MRPC | | AVG |
+| Method | MNLI-m/mm | QQP | QNLI | SST-2 | CoLA | RTE | MRPC | AVG |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |  ------ |
 | LM-BFF 32-Sample Few-Shot | 68.3/70.5 | 65.5 | 64.5 | 92.7 | 9.3 | 69.1 | 74.5 | 63.6 |
 | SuperGen Zero-Shot | 72.3/73.8 | 66.1 | 73.3 | 92.8 | 32.7 | 65.3 | 82.2 | 69.4 |
