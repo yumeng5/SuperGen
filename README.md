@@ -39,9 +39,36 @@ python src/gen_utils.py --task $TASK --num_select_samples $NUM_SELECT \
 
 ## Fine-Tuning
 
+The entry script for fine-tuning on generated data is [`finetune.py`](finetune.py). The basic usage is
+```
+python finetune.py \
+    --task_name $TASK \
+    --data_dir data/$TASK \
+    --overwrite_output_dir \
+    --do_train \
+    --do_predict \
+    --smooth $SM \
+    --momentum $MOMENT \
+    --eval_steps $INTERVAL \
+    --threshold $TH \
+    --reg_weight $REG \
+    --temp_ensemble_rampup $RAMP \
+    --model_name_or_path $MODEL \
+    --max_seq_length 128 \
+    --first_sent_limit 100 \
+    --per_device_train_batch_size $BS \
+    --learning_rate $LR \
+    --num_train_epochs 3 \
+    --output_dir $OUT_DIR \
+    --template $TEMPLATE \
+    --mapping $MAPPING \
+    --warmup_ratio 0.1 \
+    --save_at_last \
+```
 
+**Example**: We provide an example script [`run_finetune.sh`](run_finetune.sh) with command line arguments set up for all GLUE tasks under the setting described in the paper.
 
-When using the same prompt-based fine-tuning pipeline (with the same manual prompts and label words), zero-shot SuperGen even achieves better performance than few-shot LM-BFF using 32 annotated samples per class across seven GLUE classification tasks:
+**Results**: When using the same prompt-based fine-tuning pipeline (with the same manual prompts and label words), zero-shot SuperGen even achieves better performance than few-shot LM-BFF using 32 annotated samples per class across seven GLUE classification tasks:
 | Method | MNLI-m/mm | QQP | QNLI | SST-2 | CoLA | RTE | MRPC | AVG |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |  ------ |
 | LM-BFF 32-Sample Few-Shot | 68.3/70.5 | 65.5 | 64.5 | 92.7 | 9.3 | 69.1 | 74.5 | 63.6 |
@@ -49,7 +76,7 @@ When using the same prompt-based fine-tuning pipeline (with the same manual prom
 
 ## Acknowledgement
 
-Some scripts in this repository are adapted from [COCO-LM](https://github.com/microsoft/COCO-LM)(for COCO-LM model), [LM-BFF](https://github.com/princeton-nlp/LM-BFF)(for prompt-based fine-tuning) and [huggingface transformers](https://github.com/huggingface/transformers)(for text generation and GLUE processor/trainer).
+Some scripts in this repository are adapted from [COCO-LM](https://github.com/microsoft/COCO-LM) (for COCO-LM model), [LM-BFF](https://github.com/princeton-nlp/LM-BFF) (for prompt-based fine-tuning) and [huggingface transformers](https://github.com/huggingface/transformers) (for text generation and GLUE processor/trainer).
 
 ## Citations
 
