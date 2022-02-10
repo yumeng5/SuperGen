@@ -68,7 +68,7 @@ python finetune.py \
 
 **Example**: We provide an example script [`run_finetune.sh`](run_finetune.sh) with command line arguments set up for all GLUE tasks under the setting described in the paper.
 
-**Results**: When using the same prompt-based fine-tuning pipeline (with the same manual prompts and label words), zero-shot SuperGen even achieves better performance than few-shot LM-BFF using 32 annotated samples per class across seven GLUE classification tasks:
+**Results**: When using the same prompt-based fine-tuning pipeline (with the same manual prompts and label words), zero-shot SuperGen even achieves better performance than few-shot [LM-BFF](https://github.com/princeton-nlp/LM-BFF) using 32 annotated samples per class across seven GLUE classification tasks:
 | Method | MNLI-m/mm | QQP | QNLI | SST-2 | CoLA | RTE | MRPC | AVG |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |  ------ |
 | LM-BFF 32-Sample Few-Shot | 68.3/70.5 | 65.5 | 64.5 | 92.7 | 9.3 | 69.1 | 74.5 | 63.6 |
