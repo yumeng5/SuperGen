@@ -1,3 +1,6 @@
 torch==1.10.1
 transformers==4.11.3
 sentencepiece==0.1.95
+tqdm==4.62.3
+numpy==1.20.3
+nltk==3.6.5
