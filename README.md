@@ -1,6 +1,6 @@
 # SuperGen
 
-The source code for [Generating Training Data with Language Models: Towards Zero-Shot Language Understanding]().
+The source code for [Generating Training Data with Language Models: Towards Zero-Shot Language Understanding](https://arxiv.org/abs/2202.04538).
 
 ## Requirements
 
@@ -38,7 +38,7 @@ Please cite the following paper if you find the code helpful for your research.
 @article{meng2022generating,
   title={Generating Training Data with Language Models: Towards Zero-Shot Language Understanding},
   author={Meng, Yu and Huang, Jiaxin and Zhang, Yu and Han, Jiawei},
-  journal={arXiv preprint arXiv:2010.07245},
+  journal={arXiv preprint arXiv:2202.04538},
   year={2022}
 }
 ```
