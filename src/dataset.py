@@ -10,11 +10,9 @@ from filelock import FileLock
 import json
 from src.processors import processors_mapping
 from transformers.data.processors.utils import InputFeatures
-from transformers import DataProcessor, InputExample
 import dataclasses
 from dataclasses import dataclass
 from typing import List, Optional, Union
-from copy import deepcopy
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -304,7 +302,7 @@ class SuperGenDataset(torch.utils.data.Dataset):
         lock_path = cached_features_file + ".lock"
         with FileLock(lock_path):
 
-            if False: #os.path.exists(cached_features_file) and not args.overwrite_cache:
+            if os.path.exists(cached_features_file) and not args.overwrite_cache:
                 start = time.time()
                 self.examples = torch.load(cached_features_file)
                 logger.info(
@@ -320,7 +318,6 @@ class SuperGenDataset(torch.utils.data.Dataset):
 
                 start = time.time()
                 torch.save(self.examples, cached_features_file)
-                # ^ This seems to take a lot of time so I want to investigate why and how we can improve.
                 logger.info(
                     "Saving features into cached file %s [took %.3f s]", cached_features_file, time.time() - start
                 )
