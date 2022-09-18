@@ -1,6 +1,6 @@
 # SuperGen
 
-The source code for [Generating Training Data with Language Models: Towards Zero-Shot Language Understanding](https://arxiv.org/abs/2202.04538).
+The source code for [Generating Training Data with Language Models: Towards Zero-Shot Language Understanding](https://arxiv.org/abs/2202.04538), published in NeurIPS 2022.
 
 ## Requirements
 
@@ -82,10 +82,10 @@ Some scripts in this repository are adapted from [COCO-LM](https://github.com/mi
 
 Please cite the following paper if you find the code helpful for your research.
 ```
-@article{meng2022generating,
+@inproceedings{meng2022generating,
   title={Generating Training Data with Language Models: Towards Zero-Shot Language Understanding},
   author={Meng, Yu and Huang, Jiaxin and Zhang, Yu and Han, Jiawei},
-  journal={arXiv preprint arXiv:2202.04538},
+  booktitle={Advances in Neural Information Processing Systems},
   year={2022}
 }
 ```
